@@ -1,0 +1,315 @@
+
+begin
+file_desc
+//
+//  %s.h
+//  %s
+//
+//  Created by zzc on %s.
+//  Copyright © 2019年 ynd. All rights reserved.
+//
+end
+
+
+begin
+property
+@property(nonatomic, strong)%s *%s;
+end
+
+
+
+
+
+################################## UI Setter模板  ###########################
+
+begin
+set_method_UIView
+- (%s *)%s
+{
+	if(!_%s) {
+		_%s = createView(%s);
+		%s
+	}
+	return _%s;
+}
+end
+
+
+begin
+set_method_UILabel
+[_%s ss_setText:nil
+         Font:nil
+         TextColor:nil
+         BackgroundColor:nil];
+
+end
+
+
+begin
+set_method_UIImageView
+_%s.image = UIImageWithName(@"");
+
+end
+
+
+
+begin
+set_method_UIButton
+[_%s ss_setTitle:nil
+	TitleFont:nil
+ 	NormalTitleColor:nil
+ 	HighLightTitleColor:nil];
+[_%s ss_setNormalBGImage:UIImageWithName(@"")
+    HighlightBGImage:UIImageWithName(@"")];
+
+end
+
+
+
+begin
+set_method_UITextField
+SSTextAttributedItem *textAttrItem  = SSTextAttrItem(nil, nil, nil);
+SSTextAttributedItem *placeAttrItem = SSTextAttrItem(nil, nil, nil);
+[_%s ss_setTextAttrItem:textAttrItem PlaceAttrItem:placeAttrItem];
+
+end
+
+
+
+
+
+
+
+
+##################### addView模板  ###########################
+
+begin
+view_addview
+[self addSubview:self.%s];
+end
+
+begin
+cell_addview
+[self.contentView addSubview:self.%s];
+end
+
+begin
+viewcontroller_addview
+[self.view addSubview:self.%s];
+end
+
+
+
+
+################################## make模板  ###########################
+
+begin
+view_makeConstraint
+[self.%s mas_makeConstraints:^(MASConstraintMaker *make) {
+
+}];
+
+end
+
+
+
+################################## UIMethod模板  ###########################
+
+
+begin
+
+view_UIMethod
+
+- (void)setupSubView
+{
+    [super setupSubView];
+    %s
+}
+
+- (void)setupConstraint
+{
+    WEAKSELF;
+    %s
+}
+
+- (void)setupEvent
+{
+    //WEAKSELF;
+    %s
+}
+
+end
+
+
+
+
+
+
+
+
+################# 其他方法模板 #############################
+
+
+begin
+view_otherMethod
+
+
+#pragma mark - Public
+
+- (void)configView
+{
+
+}
+
+end
+
+
+begin
+cell_otherMethod
+
+#pragma mark - Public
+
+//- (void)bindModel:(NSDictionary *)model
+//{
+//
+//}
+
+
+end
+
+
+
+begin
+
+viewcontroller_otherMethod
+
+
+#pragma mark - ViewModel
+
+- (void)setupBinding
+{
+    [super setupBinding];
+}
+
+#pragma mark - Private
+
+- (void)backButtonPressed:(id)sender
+{
+    [self.view endEditing:YES];
+    //返回
+}
+
+end
+
+
+
+begin
+viewmodel_otherMethod
+
+- (void)commonInit
+{
+    [super commonInit];
+    self.navBarTitle = @"标题";
+    //初始化
+}
+
+
+end
+
+
+
+
+
+##################### 头文件模板  ###########################
+
+begin
+header_file
+%s
+
+#import "%s.h"
+
+@interface %s : %s
+%s
+@end
+
+end
+
+
+
+begin
+vc_header_file
+%s
+
+#import "%s.h"
+#import "%s.h"
+
+@interface %s : %s
+
+@property (nonatomic, strong, readonly) %s *viewModel;
+
+- (instancetype)initWithVM:(%s *)viewModel;
+
+%s
+
+@end
+
+end
+
+
+
+
+
+
+begin
+implement_file
+%s
+
+#import "%s.h"
+
+@interface %s()
+
+@end
+
+
+@implementation %s
+
+%s
+
+@end
+
+end
+
+
+
+begin
+vc_implement_file
+%s
+
+#import "%s.h"
+
+@interface %s()
+
+@end
+
+
+@implementation %s
+
+- (instancetype)initWithVM:(%s *)viewModel {
+    self = [super init];
+    if (self) {
+        self.viewModel = viewModel;
+    }
+    return self;
+}
+
+%s
+
+@end
+
+end
+
+
+
+
+
+

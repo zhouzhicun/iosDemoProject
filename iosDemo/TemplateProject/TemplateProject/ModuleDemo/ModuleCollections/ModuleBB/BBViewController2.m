@@ -1,0 +1,32 @@
+//
+//  BBViewController2.m
+//  
+//
+//  Created by zzc on 2020/1/3.
+//
+
+#import "BBViewController2.h"
+
+@interface BBViewController2 ()
+
+@end
+
+@implementation BBViewController2
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Do any additional setup after loading the view.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
